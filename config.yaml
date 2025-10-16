@@ -1,0 +1,57 @@
+scrape:
+  # список разделов каталога, которые нужно парсить (можно дополнять)
+  urls:
+    - "https://horizont.garant.by/tv-and-complimentary/televizory/"
+    - "https://horizont.garant.by/xolodilniki_i_morozilniki/"
+    - "https://horizont.garant.by/stiralnye-mashiny/"
+    - "https://horizont.garant.by/posudomoechnye-mashiny/"
+    - "https://horizont.garant.by/plity-pechi-duhovki/"
+    - "https://horizont.garant.by/vozduhoochistiteli/"
+    - "https://horizont.garant.by/tehnika-dlya-uborki/"     # пылесосы и пр.
+    - "https://horizont.garant.by/melkaya-bytovaya-texnika/"
+    - "https://horizont.garant.by/vodonagrevateli/"
+    - "https://horizont.garant.by/tehnika-dlya-krasoty/"
+    - "https://horizont.garant.by/telefony/"
+    - "https://horizont.garant.by/radiopriemniki/"
+    - "https://horizont.garant.by/kompyuternaya-tehnika-i-aksessuary/"
+
+  # ежедневный запуск локальным временем
+  daily_time: "23:00"
+
+  # селекторы под темы beseller
+  selectors:
+    card: [".product", ".product-item", ".catalog__item", ".item", ".goods", ".tov"]
+    title: [".product__title a", ".product-title a", ".title a", "a.product__title", "a.title", "a"]
+    price: [".product__price", ".price .current", ".price-current", ".price", ".cost", ".product-price"]
+    link_from_title: true
+
+# авторазбор на категории по ключевым словам
+categories:
+  - name: "Телевизоры"
+    keywords: ["телевизор", "tv", "horizont", "samsung", "lg", "tcl", "renova"]
+  - name: "Холодильники и морозильники"
+    keywords: ["холодильник", "морозильник", "atlant", "морозильная"]
+  - name: "Стиральные машины"
+    keywords: ["стиральн", "машин", "lg", "indesit", "samsung"]
+  - name: "Посудомоечные машины"
+    keywords: ["посудомоеч", "посудомой", "dishwash"]
+  - name: "Плиты и духовые шкафы"
+    keywords: ["плита", "духов", "печ", "газова", "электроплита", "вароч", "встраиваем"]
+  - name: "Воздухоочистители"
+    keywords: ["воздухоочист", "очиститель", "увлажнител", "обогревател", "вентилятор"]
+  - name: "Техника для уборки"
+    keywords: ["пылесос", "робот-пылесос", "мойщик окон", "аксессуар к технике для уборки"]
+  - name: "Мелкая бытовая техника"
+    keywords: ["чайник", "кофе", "блендер", "миксер", "мультивар", "мясоруб", "соковыжим", "сэндвич", "вафельниц", "орешниц", "кексниц", "утюг", "отпариватель", "весы"]
+  - name: "Водонагреватели"
+    keywords: ["водонагр", "бойлер", "нагреватель воды"]
+  - name: "Техника для красоты"
+    keywords: ["фен", "стайлер", "бритва", "триммер"]
+  - name: "Телефоны"
+    keywords: ["телефон", "радиотелефон"]
+  - name: "Радиоприемники"
+    keywords: ["радиоприемн", "радио"]
+  - name: "Компьютерная техника и аксессуары"
+    keywords: ["ноутбук", "компьютер", "моноблок", "аксессуар", "клавиатур", "мыш", "ssd", "hdd", "monitor"]
+  - name: "Прочее"
+    keywords: []
